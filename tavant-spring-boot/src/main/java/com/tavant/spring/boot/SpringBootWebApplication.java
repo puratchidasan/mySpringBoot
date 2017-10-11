@@ -17,7 +17,6 @@ import com.tavant.spring.boot.model.Quote;
 @SpringBootApplication
 public class SpringBootWebApplication {
 	
-	private static Quote quote = null;
 	
 	private static final Logger log = LoggerFactory.getLogger(SpringBootWebApplication.class);
 
@@ -31,7 +30,7 @@ public class SpringBootWebApplication {
 	}
 
 	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+	public CommandLineRunner run(RestTemplate restTemplate) throws RuntimeException {
 		return args -> {
 			Quote quote = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
 			log.info(quote.toString());
@@ -42,25 +41,14 @@ public class SpringBootWebApplication {
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 
-			System.out.println("Let's inspect the beans provided by Spring Boot:");
+			log.info("Let's inspect the beans provided by Spring Boot:");
 
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			Arrays.sort(beanNames);
-			int i = 1;
 			for (String beanName : beanNames) {
-				System.out.println(i + " : " + beanName);
-				log.info(i + " : " + beanName);
-				i++;
+				log.info(beanName);
 			}
 
 		};
-	}
-	
-	public Quote getQuote() {
-		return quote;
-	}
-
-	public void setQuote(Quote quote) {
-		this.quote = quote;
 	}
 }
