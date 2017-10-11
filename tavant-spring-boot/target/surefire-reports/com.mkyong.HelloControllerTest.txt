@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.mkyong.HelloControllerTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.072 sec <<< FAILURE! - in com.mkyong.HelloControllerTest
-getHello(com.mkyong.HelloControllerTest)  Time elapsed: 0.066 sec  <<< ERROR!
-java.lang.NullPointerException: null
-	at com.mkyong.HelloControllerTest.getHello(HelloControllerTest.java:30)
-
