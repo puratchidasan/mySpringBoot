@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 //@SpringBootApplication
 public class ElkExampleSpringBootApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(ElkExampleSpringBootApplication.class, args);
-    }
+   // public static void main(String[] args) {
+   //     SpringApplication.run(ElkExampleSpringBootApplication.class, args);
+   // }
 }
  
 @RestController
