@@ -23,6 +23,14 @@ pipeline {
     stage('Send Mail') {
       steps {
         echo "sending mail"
+        cleanWs()
+
+      }
+    }
+    stage('Workspace CleanUP') {
+      steps {
+        echo "clean up..."
+        cleanWs()
       }
     }
   }
